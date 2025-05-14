@@ -9,13 +9,14 @@ let
       if [[ -d queries ]]; then
         cp -r queries $out
       fi
-      if [[ -e tree-sitter.json ]]; then
-        cp tree-sitter.json $out
-      fi
+      mkdir -p $out/src
       if [[ -e src/grammar.json ]]; then
-        mkdir -p $out/src
         head -n 3 src/grammar.json > $out/src/grammar.json
         # cp src/grammar.json $out/src/
+      fi
+      touch $out/src/parser.c
+      if [[ -e tree-sitter.json ]]; then
+        cp tree-sitter.json $out
       fi
       runHook postInstall
     '';
