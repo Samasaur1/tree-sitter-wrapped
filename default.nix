@@ -38,64 +38,7 @@ let
       grammarDirectories
     ];
     # theme stuff
-    theme = {
-      "property.builtin" = {
-        color = 124;
-        bold = true;
-      };
-      punctuation = 239;
-      variable = 252;
-      keyword = 56;
-      embedded = null;
-      comment = {
-        color = 245;
-        italic = true;
-      };
-      number = {
-        color = 94;
-        bold = true;
-      };
-      module = 136;
-      "punctuation.delimiter" = 239;
-      type = 23;
-      constant = 94;
-      attribute = {
-        color = 124;
-        italic = true;
-      };
-      "punctuation.bracket" = 239;
-      string = 28;
-      tag = 18;
-      property = 124;
-      "type.builtin" = {
-        bold = true;
-        color = 23;
-      };
-      "string.special" = 30;
-      operator = {
-        color = 239;
-        bold = true;
-      };
-      "variable.parameter" = {
-        color = 252;
-        underline = true;
-      };
-      constructor = 136;
-      "function.builtin" = {
-        bold = true;
-        color = 26;
-      };
-      "punctuation.special" = 239;
-      "constant.builtin" = {
-        "color" = 94;
-        "bold" = true;
-      };
-      function = 26;
-      "variable.builtin" = {
-        "color" = 252;
-        "bold" = true;
-      };
-    };
+    theme = builtins.fromJSON (builtins.readFile ./chromacode_theme.json);
   };
 
   treesitterConfigPath = pkgs.writeText "config.json" (builtins.toJSON treesitterConfig);
