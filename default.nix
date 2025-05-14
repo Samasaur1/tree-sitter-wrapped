@@ -33,7 +33,7 @@ let
     ) everything
   );
 
-  theme = builtins.fromJSON (builtins.readFile ./catppuccin-mocha.json);
+  theme = builtins.fromJSON (builtins.readFile ./catppuccin-latte.json);
   theme' = theme // {
     "parameter" = theme."variable.parameter" or null;
     "field" = theme."variable.member" or null;
