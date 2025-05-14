@@ -1,20 +1,6 @@
 { pkgs, lib, ... }:
 
 let
-  augmentGrammar = grammar:
-    pkgs.runCommandLocal "${grammar.pname}-augmented" {} ''
-      mkdir $out
-      ln -s ${grammar}/queries $out/queries
-      mkdir $out/src
-      if [[ -e ${grammar.src}/src/grammar.json ]]; then
-        head -n 3 ${grammar.src}/src/grammar.json > $out/src/grammar.json
-      fi
-      touch $out/src/parser.c
-      if [[ -e ${grammar.src}/tree-sitter.json ]]; then
-        ln -s ${grammar.src}/tree-sitter.json $out/tree-sitter.json
-      fi
-    '';
-
   prebuiltGrammars = pkgs.vimPlugins.nvim-treesitter.allGrammars;
 
   everything = builtins.map (grammar:
@@ -22,9 +8,7 @@ let
       language = lib.pipe grammar [ lib.getName (lib.removeSuffix "-grammar") (lib.removePrefix "tree-sitter-") (lib.replaceStrings [ "-" ] [ "_" ]) ];
     in
     {
-      inherit language;
-      so = "${grammar}/parser";
-      augmented = augmentGrammar grammar;
+      inherit language grammar;
     }
   ) prebuiltGrammars;
 
@@ -35,7 +19,7 @@ let
       in
       {
         name = "${el.language}.${extension}";
-        path = el.so;
+        path = "${el.grammar}/parser";
       }
     ) everything
   );
@@ -44,7 +28,7 @@ let
     builtins.map (el:
       {
         name = "tree-sitter-${el.language}";
-        path = el.augmented;
+        path = el.grammar;
       }
     ) everything
   );
