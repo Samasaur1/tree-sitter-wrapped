@@ -1,7 +1,7 @@
 final: prev:
 let
   buildGrammar = prev.tree-sitter.buildGrammar;
-  buildGrammar' = buildGrammar.overrideAttrs {
+  buildGrammar' = args: (buildGrammar args).overrideAttrs {
     installPhase = ''
       runHook preInstall
       mkdir $out
