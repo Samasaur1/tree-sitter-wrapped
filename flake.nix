@@ -13,6 +13,9 @@
             inherit system;
             config = {
             };
+            overlays = [
+              (import ./overlay.nix)
+            ];
           };
         in
           f pkgs
