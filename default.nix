@@ -38,7 +38,7 @@ let
       grammarDirectories
     ];
     # theme stuff
-    theme = builtins.fromJSON (builtins.readFile ./chromacode_theme.json);
+    theme = builtins.fromJSON (builtins.readFile ./catppuccin-latte.json);
   };
 
   treesitterConfigPath = pkgs.writeText "config.json" (builtins.toJSON treesitterConfig);

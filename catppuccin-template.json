@@ -1,0 +1,435 @@
+{
+    // Identifiers
+    "variable": {
+        "color": "<text>" 
+    }, // Any variable name that does not have another highlight.
+    "variable.builtin": {
+        "color": "<red>" 
+    }, // Variable names that are defined by the languages, like this or self.
+    "variable.parameter": {
+        "color": "<maroon>" 
+    }, // For parameters of a function.
+    "variable.member": {
+        "color": "<lavender>" 
+    }, // For fields.
+
+    "constant": {
+        "color": "<peach>" 
+    }, // For constants
+    "constant.builtin": {
+        "color": "<peach>" 
+    }, // For constant that are built in the language: nil in Lua.
+    "constant.macro": {
+        "color": "<mauve>" 
+    }, // For constants that are defined by macros: NULL in C.
+
+    "module": {
+        "color": "<lavender>",
+        "italic": true 
+    }, // For identifiers referring to modules and namespaces.
+    "label": {
+        "color": "<sapphire>" 
+    }, // For labels: label: in C and :label: in Lua.
+
+    // Literals
+    "string": {
+        "color": "<green>" 
+    }, // For strings.
+    "string.documentation": {
+        "color": "<teal>" 
+    }, // For strings documenting code (e.g. Python docstrings).
+    "string.regexp": {
+        "color": "<peach>" 
+    }, // For regexes.
+    "string.escape": {
+        "color": "<pink>" 
+    }, // For escape characters within a string.
+    "string.special": {
+        "color": "<pink>" 
+    }, // other special strings (e.g. dates)
+    "string.special.path": {
+        "color": "<pink>" 
+    }, // filenames
+    "string.special.symbol": {
+        "color": "<flamingo>" 
+    }, // symbols or atoms
+    "string.special.url": {
+        "color": "<rosewater>",
+        "italic": true,
+        "underline": true
+    }, // urls, links and emails
+
+    "character": {
+        "color": "<teal>" 
+    }, // character literals
+    "character.special": {
+        "color": "<pink>" 
+    }, // special characters (e.g. wildcards)
+
+    "boolean": {
+        "color": "<peach>" 
+    }, // For booleans.
+    "number": {
+        "color": "<peach>" 
+    }, // For all numbers
+    "number.float": {
+        "color": "<peach>" 
+    }, // For floats.
+
+    // Types
+    "type": {
+        "color": "<yellow>" 
+    }, // For types.
+    "type.builtin": {
+        "color": "<yellow>",
+        "italic": true 
+    }, // For builtin types.
+    "type.definition": {
+        "color": "<yellow>" 
+    }, // type definitions (e.g. `typedef` in C)
+
+    "attribute": {
+        "color": "<peach>" 
+    }, // attribute annotations (e.g. Python decorators)
+    "property": {
+        "color": "<lavender>" 
+    }, // Same as TSField.
+
+    // Functions
+    "function": {
+        "color": "<blue>" 
+    }, // For function (calls and definitions).
+    "function.builtin": {
+        "color": "<peach>" 
+    }, // For builtin functions: table.insert in Lua.
+    "function.call": {
+        "color": "<blue>" 
+    }, // function calls
+    "function.macro": {
+        "color": "<teal>" 
+    }, // For macro defined functions (calls and definitions): each macro_rules in Rust.
+
+    "function.method": {
+        "color": "<blue>" 
+    }, // For method definitions.
+    "function.method.call": {
+        "color": "<blue>" 
+    }, // For method calls.
+
+    "constructor": {
+        "color": "<sapphire>"
+    }, //  For constructor calls and definitions: = { } in Lua, and Java constructors.
+    "operator": {
+        "color": "<sky>" 
+    }, // For any operator: +, but also -> and * in C.
+
+    // Keywords
+    "keyword": {
+        "color": "<mauve>" 
+    }, // For keywords that don't fall in previous categories.
+    "keyword.modifier": {
+        "color": "<mauve>" 
+    }, // For keywords modifying other constructs (e.g. `const`, `static`, `public`)
+    "keyword.type": {
+        "color": "<mauve>" 
+    }, // For keywords describing composite types (e.g. `struct`, `enum`)
+    "keyword.coroutine": {
+        "color": "<mauve>" 
+    }, // For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+    "keyword.function": {
+        "color": "<mauve>" 
+    }, // For keywords used to define a function.
+    "keyword.operator": {
+        "color": "<sky>" 
+    }, // For new keyword operator
+    "keyword.import": {
+        "color": "<mauve>" 
+    }, // For includes: #include in C, use or extern crate in Rust, or require in Lua.
+    "keyword.repeat": {
+        "color": "<mauve>" 
+    }, // For keywords related to loops.
+    "keyword.return": {
+        "color": "<mauve>" 
+    },
+    "keyword.debug": {
+        "color": "<mauve>" 
+    }, // For keywords related to debugging
+    "keyword.exception": {
+        "color": "<mauve>" 
+    }, // For exception related keywords.
+
+    "keyword.conditional": {
+        "color": "<mauve>",
+        "italic": true 
+    }, // For keywords related to conditionnals.
+    "keyword.conditional.ternary": {
+        "color": "<sky>" 
+    }, // For ternary operators (e.g. `?` / `:`)
+
+    "keyword.directive": {
+        "color": "<pink>" 
+    }, // various preprocessor directives & shebangs
+    "keyword.directive.define": {
+        "color": "<pink>" 
+    }, // preprocessor definition directives
+    // JS & derivative
+    "keyword.export": {
+        "color": "<sky>" 
+    },
+
+    // Punctuation
+    "punctuation.delimiter": {
+        "color": "<overlay2>"
+    }, // For delimiters (e.g. `;` / `.` / `,`).
+    "punctuation.bracket": {
+        "color": "<overlay2>" 
+    }, // For brackets and parenthesis.
+    "punctuation.special": {
+        "color": "<pink>"
+    }, // For special punctuation that does not fall in the categories before (e.g. `{}` in string interpolation).
+
+    // Comment
+    "comment": {
+        "color": "<overlay2>",
+        "italic": true 
+    },
+    "comment.documentation": {
+        "color": "<overlay2>",
+        "italic": true 
+    }, // For comments documenting code
+
+    "comment.error": {
+        "color": "<base>" // background = red
+    },
+    "comment.warning": {
+        "color": "<base>" // background = yellow
+    },
+    "comment.hint": {
+        "color": "<base>" // background = blue
+    },
+    "comment.todo": {
+        "color": "<base>" // background = flamingo
+    },
+    "comment.note": {
+        "color": "<base>" // background = rosewater
+    },
+
+    // Markup
+    "markup": {
+        "color": "<text>" 
+    }, // For strings considerated text in a markup language.
+    "markup.strong": {
+        "color": "<maroon>",
+        "bold": true 
+    }, // bold
+    "markup.italic": {
+        "color": "<maroon>",
+        "italic": true 
+    }, // italic
+    "markup.strikethrough": {
+        "color": "<text>" // strikethrough
+    }, // strikethrough text
+    "markup.underline": {
+        "underline": true 
+    }, // underlined text
+
+    "markup.heading": {
+        "color": "<blue>",
+        "bold": true 
+    }, // titles like: # Example
+
+    "markup.math": {
+        "color": "<blue>" 
+    }, // math environments (e.g. `$ ... $` in LaTeX)
+    "markup.quote": {
+        "color": "<maroon>",
+        "bold": true 
+    }, // block quotes
+    "markup.environment": {
+        "color": "<pink>" 
+    }, // text environments of markup languages
+    "markup.environment.name": {
+        "color": "<blue>" 
+    }, // text indicating the type of an environment
+
+    "markup.link": {
+        "color": "<lavender>",
+        "bold": true 
+    }, // text references, footnotes, citations, etc.
+    "markup.link.label": {
+        "color": "<sapphire>" 
+    }, // link, reference descriptions
+    "markup.link.url": {
+        "color": "<rosewater>",
+        "italic": true,
+        "underline": true
+    }, // urls, links and emails
+
+    "markup.raw": {
+        "color": "<teal>" 
+    }, // used for inline code in markdown and for doc in python (""")
+
+    "markup.list": {
+        "color": "<pink>" 
+    },
+    "markup.list.checked": {
+        "color": "<green>" 
+    }, // todo notes
+    "markup.list.unchecked": {
+        "color": "<overlay1>" 
+    }, // todo notes
+
+    // Diff
+    "diff.plus": {
+        "color": "<green>"
+    }, // added text (for diff files)
+    "diff.minus": {
+        "color": "<red>"
+    }, // deleted text (for diff files)
+    "diff.delta": {
+        "color": "<blue>"
+    }, // deleted text (for diff files)
+
+    // Tags
+    "tag": {
+        "color": "<mauve>" 
+    }, // Tags like html tag names.
+    "tag.attribute": {
+        "color": "<teal>",
+        "italic": true 
+    }, // Tags like html tag names.
+    "tag.delimiter": {
+        "color": "<sky>" 
+    }, // Tag delimiter like < > /
+
+    // Misc
+    "error": {
+        "color": "<red>"
+    },
+
+    // Language specific:
+    // bash
+    "function.builtin.bash": {
+        "color": "<red>",
+        "italic": true 
+    },
+
+    // markdown
+    "markup.heading.1.markdown": {
+        "color": "<red>"
+    },
+    "markup.heading.2.markdown": {
+        "color": "<peach>"
+    },
+    "markup.heading.3.markdown": {
+        "color": "<yellow>"
+    },
+    "markup.heading.4.markdown": {
+        "color": "<green>"
+    },
+    "markup.heading.5.markdown": {
+        "color": "<sapphire>"
+    },
+    "markup.heading.6.markdown": {
+        "color": "<lavender>"
+    },
+
+    // java
+    "constant.java": {
+        "color": "<teal>" 
+    },
+
+    // css
+    "property.css": {
+        "color": "<lavender>" 
+    },
+    "property.id.css": {
+        "color": "<blue>" 
+    },
+    "property.class.css": {
+        "color": "<yellow>" 
+    },
+    "type.css": {
+        "color": "<lavender>" 
+    },
+    "type.tag.css": {
+        "color": "<mauve>" 
+    },
+    "string.plain.css": {
+        "color": "<peach>" 
+    },
+    "number.css": {
+        "color": "<peach>" 
+    },
+
+    // toml
+    "property.toml": {
+        "color": "<blue>" 
+    }, // Differentiates between string and properties
+
+    // json
+    "label.json": {
+        "color": "<blue>" 
+    }, // For labels: label: in C and :label: in Lua.
+
+    // lua
+    "constructor.lua": {
+        "color": "<flamingo>"
+    }, // For constructor calls and definitions:: { } in Lua.
+
+    // typescript
+    "property.typescript": {
+        "color": "<lavender>" 
+    },
+    "constructor.typescript": {
+        "color": "<lavender>" 
+    },
+
+    // TSX (Typescript React)
+    "constructor.tsx": {
+        "color": "<lavender>" 
+    },
+    "tag.attribute.tsx": {
+        "color": "<teal>",
+        "italic": true 
+    },
+
+    // yaml
+    "variable.member.yaml": {
+        "color": "<blue>" 
+    }, // For fields.
+
+    // Ruby
+    "string.special.symbol.ruby": {
+        "color": "<flamingo>" 
+    },
+
+    // PHP
+    "function.method.php": {
+        "color": "<blue>" 
+    },
+    "function.method.call.php": {
+        "color": "<blue>" 
+    },
+
+    // C/CPP
+    "type.builtin.c": {
+        "color": "<yellow>" 
+    },
+    "property.cpp": {
+        "color": "<text>" 
+    },
+    "type.builtin.cpp": {
+        "color": "<yellow>" 
+    },
+
+    // gitcommit
+    "comment.warning.gitcommit": {
+        "color": "<yellow>" 
+    },
+
+    // gitignore
+    "string.special.path.gitignore": {
+        "color": "<text>" 
+    }
+}
