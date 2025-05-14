@@ -42,7 +42,7 @@ let
         name = "tree-sitter-${el.language}";
         path = el.augmented;
       }
-    )
+    ) everything
   );
 
   treesitterConfig = {
