@@ -122,7 +122,8 @@ let
     }
     ''
       mkdir -p $out/bin
-      makeWrapper "${lib.getExe pkgs.tree-sitter}" "$out/bin/tree-sitter" --add-flags "--config-path ${treesitterConfigPath}" --set-default TREE_SITTER_LIBDIR "${sharedObjects}"
+      # TODO: we should just write our own wrapper
+      makeWrapper "${lib.getExe pkgs.tree-sitter}" "$out/bin/tree-sitter" --append-flags "--config-path ${treesitterConfigPath}" --set-default TREE_SITTER_LIBDIR "${sharedObjects}"
     '';
 
   highlighter = pkgs.symlinkJoin {
