@@ -6,9 +6,13 @@ let
       mkdir $out
       ln -s ${grammar}/queries $out/queries
       mkdir $out/src
-      head -n 3 ${grammar.src}/src/grammar.json > $out/src/grammar.json
+      if [[ -e ${grammar.src}/src/grammar.json ]]; then
+        head -n 3 ${grammar.src}/src/grammar.json > $out/src/grammar.json
+      fi
       touch $out/src/parser.c
-      ln -s ${grammar.src}/tree-sitter.json $out/tree-sitter.json
+      if [[ -e ${grammar.src}/tree-sitter.json ]]; then
+        ln -s ${grammar.src}/tree-sitter.json $out/tree-sitter.json
+      fi
     '';
 
   prebuiltGrammars = pkgs.vimPlugins.nvim-treesitter.allGrammars;
