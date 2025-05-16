@@ -1,9 +1,15 @@
 {
   description = "tree-sitter highlight with Nix-built grammars";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    tree-sitter-bencode = {
+      url = "github:Samasaur1/tree-sitter-bencode";
+      flake = false;
+    };
+  };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, tree-sitter-bencode, ... }:
     let
       allSystems = nixpkgs.lib.systems.flakeExposed;
       forAllSystems = nixpkgs.lib.genAttrs allSystems;
@@ -22,7 +28,9 @@
       );
     in {
       packages = define (pkgs: {
-        default = pkgs.callPackage ./. { };
+        default = pkgs.callPackage ./. {
+          tree-sitter-bencode-src = tree-sitter-bencode;
+        };
       });
     };
 }

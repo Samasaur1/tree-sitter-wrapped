@@ -17,7 +17,24 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "tree-sitter-bencode": "tree-sitter-bencode"
+      }
+    },
+    "tree-sitter-bencode": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747362308,
+        "narHash": "sha256-RgPtrXIbRc8ZWsdvPp3ddX+K1LpExufpl1gD/S2jUEo=",
+        "owner": "Samasaur1",
+        "repo": "tree-sitter-bencode",
+        "rev": "033e919cbf80c260880304df89c5b7c7b14dc035",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Samasaur1",
+        "repo": "tree-sitter-bencode",
+        "type": "github"
       }
     }
   },

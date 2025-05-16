@@ -1,7 +1,14 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, tree-sitter-bencode-src, ... }:
 
 let
-  prebuiltGrammars = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+  tree-sitter-bencode = pkgs.tree-sitter.buildGrammar {
+    language = "bencode";
+    version = "0.1.0";
+    src = tree-sitter-bencode-src;
+    generate = true;
+  };
+
+  prebuiltGrammars = pkgs.vimPlugins.nvim-treesitter.allGrammars ++ [tree-sitter-bencode];
 
   everything = builtins.map (grammar:
     let
